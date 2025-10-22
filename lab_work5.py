@@ -10,9 +10,9 @@ def num1() -> None:
 def fib(orig_num: int, num: int = 1, prev: int = 0,) -> bool:
     if orig_num == num:
         return True
-    if num < orig_num:
-        return fib(orig_num, num+prev, num)
-    return False
+    if num > orig_num:
+        return False
+    return fib(orig_num, num+prev, num)
 
 def degrees():
     celsium = 15

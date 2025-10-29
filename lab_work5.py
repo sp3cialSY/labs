@@ -14,7 +14,7 @@ def fib(orig_num: int, num: int = 1, prev: int = 0,) -> bool:
         return False
     return fib(orig_num, num+prev, num)
 
-def degrees():
+def degrees() -> None:
     celsium = 15
     print("Таблица перевода градусов Фаренгейта в Цельсия")
     while celsium <= 30:

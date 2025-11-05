@@ -7,7 +7,7 @@ def num1() -> None:
             return x
         x = round(x + 0.1, 1)
         
-def fib(orig_num: int, num: int = 1, prev: int = 0,) -> bool:
+def fib(orig_num: int, num: int = 1, prev: int = 0) -> bool:
     if orig_num == num:
         return True
     if num > orig_num:
@@ -28,15 +28,15 @@ if __name__ == "__main__":
     print("Точка пересечения y = x - arctan(x) - π с осью X: ")
     print(f"Точка с координатами ({num1()}, 0)\n")
     try:
-        f = int(input("Является ли числом элементом последовательности Фибоначии?\nВведи целочисленное число: "))
+        f = int(input("Является ли числом элементом последовательности Фибоначчи?\nВведи целочисленное число: "))
+        if f < 1:
+            print("Число должно быть больше 1")
+        else:
+            is_fib = fib(f)
+            valid = 'входит' if is_fib else "не входит"
+            print(f"Число {f} {valid} в последовательность Фибоначчи")
     except:
         print("Ты ввёл не число!\n")
-    if f <= 1:
-        print("Число должно быть больше 1!\n")
-    else:
-        valid = fib(f)
-        ans = "входит" if valid else "не входит"
-        print(f"Число {f} {ans} в последовательность Фибоначчи\n")
     degrees()
         
     

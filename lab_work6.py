@@ -1,7 +1,7 @@
 from string import ascii_letters, digits
 from random import randint
 
-def rereplace(s: str, s0) -> str:
+def make_zero(s: str, s0: str) -> str:
     if not s0 in s:
         return s
     
@@ -28,7 +28,7 @@ def task1(s: str, s0: str) -> str:
     if not s0 in s:
         return s
     # return s.replace(s0, "", 1)
-    return rereplace(s, s0)
+    return make_zero(s, s0)
 
 def task2(text: str) -> bool:
     letters = "абвгдеёжзийклмнопрстуфхцчшщъьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЭЮЯ" + ascii_letters

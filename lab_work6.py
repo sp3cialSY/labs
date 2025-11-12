@@ -1,12 +1,34 @@
 from string import ascii_letters, digits
 from random import randint
 
+def rereplace(s: str, s0) -> str:
+    if not s0 in s:
+        return s
+    
+    for i in range(len(s) - len(s0) + 1):
+        valid = True
+        for j in range(len(s0)):
+            if s[i+j] != s0[j]:
+                valid = False
+                break
+        if valid:
+            pos = i
+            break
+    
+    new_s = ''
+    for i in range(len(s)):
+        if not (pos <= i < pos + len(s0)):
+            new_s += s[i]
+
+    return new_s
+
 def task1(s: str, s0: str) -> str:
     if not s or not s0:
         return ValueError("Values must be not none")
     if not s0 in s:
         return s
-    return s.replace(s0, "", 1)
+    # return s.replace(s0, "", 1)
+    return rereplace(s, s0)
 
 def task2(text: str) -> bool:
     letters = "абвгдеёжзийклмнопрстуфхцчшщъьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЭЮЯ" + ascii_letters
